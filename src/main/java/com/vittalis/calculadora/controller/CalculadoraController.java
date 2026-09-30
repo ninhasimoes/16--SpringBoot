@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/calculadora")
+
 public class CalculadoraController {
     @GetMapping("/somar")
     public int somar(int a, int b) {
@@ -27,6 +28,6 @@ public class CalculadoraController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "Não existe divisão por zero");
         }
-        return a/b;
+        return (double) a/b;
     }
 }
